@@ -1,0 +1,61 @@
+{
+	"comment": "",
+	"ignore": "test",
+	"package": [
+		{
+			"checksumSHA1": "IUksYuRikEHicKTi2d+TpQedxdw=",
+			"path": "github.com/Bowery/prompt",
+			"revision": "3a76720709401fd06e29c3105c51f18b9f001108",
+			"revisionTime": "2015-07-22T23:30:59Z"
+		},
+		{
+			"checksumSHA1": "+b0RA2T+fDj+JLFY8AG+j708aEc=",
+			"path": "github.com/go-playground/statics",
+			"revision": "de58399caf88a2b799a468a957db2972972436da",
+			"revisionTime": "2015-11-20T13:04:33Z"
+		},
+		{
+			"checksumSHA1": "onz7MKeXUlN7V+K5Erc1t+QVljg=",
+			"path": "github.com/go-playground/statics/static",
+			"revision": "de58399caf88a2b799a468a957db2972972436da",
+			"revisionTime": "2015-11-20T13:04:33Z"
+		},
+		{
+			"checksumSHA1": "CPh1wcGiIzRIsj1DzMdcviqbjMk=",
+			"path": "github.com/labstack/gommon/color",
+			"revision": "445cf40e6de4cbef35daf3285ff5212c91e78262",
+			"revisionTime": "2016-07-19T15:51:39Z"
+		},
+		{
+			"checksumSHA1": "6wAWOVRtaH7hX48hmw9o7noyy5Q=",
+			"path": "github.com/mattn/go-colorable",
+			"revision": "9056b7a9f2d1f2d96498d6d146acd1f9d5ed3d59",
+			"revisionTime": "2016-06-02T15:08:27Z"
+		},
+		{
+			"checksumSHA1": "NkbetqlpWBi3gP08JDneC+axTKw=",
+			"path": "github.com/mattn/go-isatty",
+			"revision": "56b76bdf51f7708750eac80fa38b952bb9f32639",
+			"revisionTime": "2015-12-11T00:06:21Z"
+		},
+		{
+			"checksumSHA1": "jiGepZayQwF1uWuXz2fcNAMaTmQ=",
+			"path": "github.com/mkideal/cli",
+			"revision": "a1b8351984cee3960bee26221a276ec861d4084f",
+			"revisionTime": "2016-06-23T17:36:37Z"
+		},
+		{
+			"checksumSHA1": "1dO5Yf67s7zNay308xF9dBnGLEA=",
+			"path": "github.com/mkideal/pkg/debug",
+			"revision": "1d9dd0063a3a50ab73a9e6f4319bdfaad5e6be07",
+			"revisionTime": "2016-07-23T00:48:08Z"
+		},
+		{
+			"checksumSHA1": "UeWRPZ/lydUG37w/LkWzVU1QtOs=",
+			"path": "github.com/mkideal/pkg/expr",
+			"revision": "1d9dd0063a3a50ab73a9e6f4319bdfaad5e6be07",
+			"revisionTime": "2016-07-23T00:48:08Z"
+		}
+	],
+	"rootPath": "dipoletech.com/device-art"
+}
