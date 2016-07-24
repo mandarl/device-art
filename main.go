@@ -4,6 +4,7 @@ import (
     "os"
     "fmt"
     "log"
+    "net/http"
     "image"
     "strings"
     "image/png"
@@ -32,6 +33,8 @@ func (argv *argT) Validate(ctx *cli.Context) error {
 }
 
 
+
+
 func main() {
     cli.Run(&argT{}, func(ctx *cli.Context) error {
         argv := ctx.Argv().(*argT)
@@ -41,12 +44,28 @@ func main() {
 }
 
 func run(args *argT) {
+    
+    coordinates := map[string][2]int{
+	"nexus_6_port":  [2]int{229, 239},
+	"nexus_6_land":  [2]int{318, 77},
+	"nexus_6p_port":  [2]int{312, 579},
+	"nexus_6p_land":  [2]int{579, 320},
+	"nexus_5_port":  [2]int{306, 436},
+	"nexus_5_land":  [2]int{436, 306},
+	"nexus_5x_port":  [2]int{305, 485},
+	"nexus_5x_land":  [2]int{484, 313},
+    }
+    // coordinates := map[string]int{
+    //     "nexus_6_port": 1
+    // }
 
-    deviceBackImage := readImage(imageBackPath(args))
+    deviceBackImage := readImageWeb(imageBackPath(args))
     screenshotImage := readImage(args.InputImage)
     
     //starting position of the second image (bottom left)
-    sp2 := image.Point{229, 239}
+    x := coordinates[fmt.Sprintf("%s_%s", args.Device, args.Orientation)][0]
+    y := coordinates[fmt.Sprintf("%s_%s", args.Device, args.Orientation)][1]
+    sp2 := image.Point{x, y}
     
     //new rectangle for the second image
     r2 := image.Rectangle{sp2, deviceBackImage.Bounds().Max}
@@ -65,18 +84,18 @@ func run(args *argT) {
     }
     
     png.Encode(out, rgba)
+    fmt.Printf("Success - output file is : %s\n", args.OutputFile)
 }
 
 func imageBackPath (args *argT) string {
-     return pathJoin(imageBasePath(args), 
-                fmt.Sprintf("%s_%s_back.png", args.Device, args.Orientation))
+    return fmt.Sprintf("%s_%s_back.png", args.Device, args.Orientation)
 }
 
 func imageBasePath (args *argT) string {
     path := ""//args.ImageDirectory
-    if (path == "") {
-        path = "./data"
-    }
+    // if (path == "") {
+    //     path = "./data"
+    // }
     return path
 }
 
@@ -89,6 +108,7 @@ func pathJoin (path1 string, path2 string) string{
 }
 
 func readImage(path string) image.Image{
+
     infile, err := os.Open(path)
     if err != nil {
         // replace this with real error handling
@@ -99,6 +119,34 @@ func readImage(path string) image.Image{
     // Decode will figure out what type of image is in the file on its own.
     // We just have to be sure all the image packages we want are imported.
     src, _, err := image.Decode(infile)
+    if err != nil {
+        // replace this with real error handling
+        log.Fatal("can't read image", path, err)
+    }
+    return src
+}
+
+func readImageWeb(path string) image.Image{
+    url := "https://raw.githubusercontent.com/mandarl/device-art/master/assets/" + path
+
+    response, e := http.Get(url)
+    if e != nil {
+        log.Fatal(e)
+    }
+
+    defer response.Body.Close()
+    
+    // infile, err := Asset(path) //os.Open(path)
+    // if err != nil {
+    //     // replace this with real error handling
+    //     log.Fatal("can't open file", err)
+    // }
+    // r := bytes.NewReader(infile)
+    //defer infile.Close()
+    
+    // Decode will figure out what type of image is in the file on its own.
+    // We just have to be sure all the image packages we want are imported.
+    src, _, err := image.Decode(response.Body)
     if err != nil {
         // replace this with real error handling
         log.Fatal("can't read image", path, err)

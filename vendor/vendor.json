@@ -21,6 +21,12 @@
 			"revisionTime": "2015-11-20T13:04:33Z"
 		},
 		{
+			"checksumSHA1": "MzTCg3kFsi/89bf1wGsGJwIykEM=",
+			"path": "github.com/jteeuwen/go-bindata",
+			"revision": "a0ff2567cfb70903282db057e799fd826784d41d",
+			"revisionTime": "2015-10-23T09:11:02Z"
+		},
+		{
 			"checksumSHA1": "CPh1wcGiIzRIsj1DzMdcviqbjMk=",
 			"path": "github.com/labstack/gommon/color",
 			"revision": "445cf40e6de4cbef35daf3285ff5212c91e78262",
