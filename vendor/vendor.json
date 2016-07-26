@@ -27,6 +27,18 @@
 			"revisionTime": "2015-10-23T09:11:02Z"
 		},
 		{
+			"checksumSHA1": "6nmAJBw2phU9MUmkUnqFvbO5urg=",
+			"path": "github.com/kardianos/osext",
+			"revision": "29ae4ffbc9a6fe9fb2bc5029050ce6996ea1d3bc",
+			"revisionTime": "2015-12-22T15:32:29Z"
+		},
+		{
+			"checksumSHA1": "1jQqVXhudkipVvVyTc3har4P2KU=",
+			"path": "github.com/kr/binarydist",
+			"revision": "3035450ff8b987ec4373f65c40767f096b35f2d2",
+			"revisionTime": "2016-07-21T04:38:06Z"
+		},
+		{
 			"checksumSHA1": "CPh1wcGiIzRIsj1DzMdcviqbjMk=",
 			"path": "github.com/labstack/gommon/color",
 			"revision": "445cf40e6de4cbef35daf3285ff5212c91e78262",
@@ -61,6 +73,12 @@
 			"path": "github.com/mkideal/pkg/expr",
 			"revision": "1d9dd0063a3a50ab73a9e6f4319bdfaad5e6be07",
 			"revisionTime": "2016-07-23T00:48:08Z"
+		},
+		{
+			"checksumSHA1": "YcRekI9twXE66nadCUZk2QDddUk=",
+			"path": "github.com/sanbornm/go-selfupdate",
+			"revision": "8d409ca53a740932c8e3a6cd1d8ea4c111f5e539",
+			"revisionTime": "2016-05-04T15:39:34Z"
 		}
 	],
 	"rootPath": "dipoletech.com/device-art"

@@ -11,9 +11,10 @@ import (
     "image/draw"
     "path/filepath"
     "github.com/mkideal/cli"
+    "github.com/mandarl/go-selfupdate/selfupdate"
 )
 
-var VERSION string = "DEV"
+var VERSION string = "dev"
 
 type argT struct {
     cli.Helper
@@ -21,12 +22,13 @@ type argT struct {
     Device string `cli:"d,device" usage:"the device skin to use" dft:"nexus_6"`
     Orientation string `cli:"o,orientation" usage:"device orientation; can be port or land" dft:"port"`
     OutputFile string `cli:"p,output-file" usage:"output file path" dft:"output.png"`
+    Version bool `cli:"!v,version" usage:"print the current version"`
     //ImageDirectory string `cli:"a,device-art-dir" usage:"directory containing device art images"`
 }
 
 // Validate implements cli.Validator interface
 func (argv *argT) Validate(ctx *cli.Context) error {
-	if !strings.EqualFold(argv.Orientation, "port") && !strings.EqualFold(argv.Orientation, "land") {
+    if !strings.EqualFold(argv.Orientation, "port") && !strings.EqualFold(argv.Orientation, "land") {
 		return fmt.Errorf("orientation must be either port or land - %s is not a valid value", ctx.Color().Yellow(argv.Orientation))
 	}
 	return nil
@@ -44,6 +46,13 @@ func main() {
 }
 
 func run(args *argT) {
+    
+    if(args.Version) {
+        fmt.Printf("device-art: Verison: %s\n", VERSION)
+        os.Exit(0)
+    }
+    
+    runUpdate()
     
     coordinates := map[string][2]int{
 	"nexus_6_port":  [2]int{229, 239},
@@ -152,4 +161,19 @@ func readImageWeb(path string) image.Image{
         log.Fatal("can't read image", path, err)
     }
     return src
+}
+
+func runUpdate() {
+    var updater = &selfupdate.Updater{
+        CurrentVersion: VERSION,
+        ApiURL:         "http://dipoletech.com/projects/", //u.fetch(u.ApiURL + u.CmdName + "/" + plat + ".json")
+        BinURL:         "http://dipoletech.com/projects/", //u.BinURL + u.CmdName + "/" + u.Info.Version + "/" + plat + ".gz"
+        DiffURL:        "", //u.fetch(u.DiffURL + u.CmdName + "/" + u.CurrentVersion + "/" + u.Info.Version + "/" + plat)
+        Dir:            "update/",
+        CmdName:        "device-art", // this is added to apiurl to get json
+    }
+    
+    if updater != nil {
+        go updater.BackgroundRun()
+    }
 }

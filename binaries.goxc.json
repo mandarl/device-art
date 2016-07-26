@@ -1,0 +1,31 @@
+{
+	"OutPath": "{{.Dest}}{{.PS}}{{.Version}}{{.PS}}{{.AppName}}{{.PS}}{{.Os}}-{{.Arch}}",
+	"AppName": "device-art",
+	"TasksExclude": ["deb", "deb-dev", "rmbin", "archive", "go-install", "downloads-page", "bintray"],
+	"Tasks": [
+		"default",
+		"bintray"
+	],
+	"Arch": "386 amd64",
+	"Os": "linux windows darwin",
+	"BuildConstraints": "linux windows darwin",
+	"PackageVersion": "1.0.0",
+    "Resources": {
+        "Include": "",
+        "Exclude": "*.md"
+    },
+	"TaskSettings": {
+        "bintray": {
+            "apihost": "https://api.bintray.com",
+            "downloadshost": "https://dl.bintray.com/",
+            "downloadspage": "",
+            "repository": "generic",
+            "subject": "mandarl",
+            "package": "device-art",
+            "user": "mandarl",
+            "include": "*",
+            "exclude": "*.md"
+        }
+	},
+	"ConfigVersion": "0.9"
+}

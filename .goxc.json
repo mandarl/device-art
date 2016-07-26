@@ -1,12 +1,13 @@
 {
 	"OutPath": "{{.Dest}}{{.PS}}{{.Version}}{{.PS}}{{.Os}}-{{.Arch}}{{.PS}}{{.AppName}}{{.Ext}}",
 	"AppName": "device-art",
+	"TasksExclude": ["deb", "deb-dev"],
 	"Tasks": [
 		"default",
 		"publish-github"
 	],
 	"Arch": "386 amd64",
-	"BuildConstraints": "windows linux darwin",
+	"BuildConstraints": "linux windows darwin",
 	"PackageVersion": "1.0.0",
 	"TaskSettings": {
 		"publish-github": {
