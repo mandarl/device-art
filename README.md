@@ -8,7 +8,7 @@ The screenshot must match the dimensions of the device.
 
 ## Download
 Download the latest versions for Windows, Mac and Linux on the GitHub releases page:
-https://github.com/mandarl/device-art/releases
+https://github.com/mandarl/device-art/releases/latest
 
 ## Usage
 device-art can be used on the desktop to quickly capture a screenshot and frame it, or it can be used on a build server to frame screenshots taken as part of automated tests.
