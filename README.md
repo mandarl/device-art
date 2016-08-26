@@ -1,7 +1,8 @@
 # device-art
 device-art: a simple utility for framing your phone screenshots in a device skin.
 
-Currently supported device skins are Nexus 5 (1080x1920), 6 (1440x2560), 5x (1080x1920), 6p (1440x2560).
+Currently supported device skins are Nexus 5 (1080x1920), 6 (1440x2560), 5x (1080x1920), 6p (1440x2560) and 
+iPhone 5 (640x1136), 6 (750x1334), 6S (1080x1920) and iPad Air 2 (1536x2048) .
 The screenshot must match the dimensions of the device.
 
 ![enter image description here](https://raw.githubusercontent.com/mandarl/device-art/master/art/screenshot.jpg)

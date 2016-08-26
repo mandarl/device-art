@@ -54,7 +54,7 @@ func run(args *argT) {
     
     runUpdate()
     
-    coordinates := map[string][2]int{
+    coordinates := map[string][2]int{		//map[filename] [2]int[x,y]
 	"nexus_6_port":  [2]int{229, 239},
 	"nexus_6_land":  [2]int{318, 77},
 	"nexus_6p_port":  [2]int{312, 579},
@@ -63,6 +63,14 @@ func run(args *argT) {
 	"nexus_5_land":  [2]int{436, 306},
 	"nexus_5x_port":  [2]int{305, 485},
 	"nexus_5x_land":  [2]int{484, 313},
+	"iphone_6_port":  [2]int{320, 185},
+	"iphone_6_land":  [2]int{218, 320},
+	"iphone_6_plus_port":  [2]int{380, 420},
+	"iphone_6_plus_land":  [2]int{420, 339},
+	"iphone_5_port":  [2]int{219, 339},
+	"iphone_5_land":  [2]int{339, 221},
+	"ipad_air_2_port":  [2]int{203, 314},
+	"ipad_air_2_land":  [2]int{314, 205},
     }
     // coordinates := map[string]int{
     //     "nexus_6_port": 1
