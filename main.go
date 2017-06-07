@@ -64,6 +64,7 @@ func run(args *argT) {
 	"nexus_5x_port":  [2]int{305, 485},
 	"nexus_5x_land":  [2]int{484, 313},
 	"iphone_6_port":  [2]int{218, 320},
+	"iphone_6_black_port":  [2]int{264, 320},
 	"iphone_6_land":  [2]int{320, 185},
 	"iphone_6_plus_port":  [2]int{380, 420},
 	"iphone_6_plus_land":  [2]int{420, 339},
